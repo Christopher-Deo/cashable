@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/cashable.ico">
+    <title>Chashable Budgeting App</title>
+    <!-- =================== Adding font awesome icons ========================== -->
+
+    <!-- =================== Adding Bootstrap & custom scc files================= -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./custom.css">
+
+    <!-- =================== Adding JS Scripts ======================= -->
+
+    <script async src="node_modules/jquery/dist/jquery.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script async src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="defer" src="index.js"></script>
+    
+</head>
+
+<body>
+    <header class="containter container-fluid bg-light">
+        <img class="logo mb-2" src="./images/cashable-logo.png" />
+        <nav class="nav d-flex  justify-content-end ">
+            <ul class="nav justify-content-evenly ">
+                <li class="nav-item">
+                    <a class="nav-link" href="#instructionModal" data-bs-toggle="modal"
+                        data-bs-target="#instructionModal">
+                        <i class="fa-solid fa-2xl fa-circle-info" id="infoNav"></i>
+                    </a>
+                    </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#incomeModal">
+                    <i class="fa-sharp fa-2xl fa-dollar-sign" id="incomeNav"></i> 
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#expenseModal">
+                    <i class="fa-sharp fa-2xl a-solid fa-file-invoice-dollar" id="expenseNav"></i>
+                </a>
+            </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ================================ recap section ==================== -->
+    <section class="container d-flex justify-content-around mt-5" id="recapArea">
+        <span
+            class="container border border-primary border-2 rounded-2 mx-4 bg-light 
+            border rounded-2 d-flex flex-column align-items-center" id="incomeRecapContainer">
+            <img class="recapImages pt-3" src="./images/money2.png">
+            <h1 class="text-dark" id="incomeAmountDisplay">$0</h1>
+        </span>
+        <span
+            class="container border border-primary border-2 rounded-2 bg-light border rounded-2 d-flex flex-column align-items-center">
+            <img class="recapImages pt-3" src="./images/expense icon.png">
+            <h1 class="text-dark mt-2" id="expenseRecapAmount">$0</h1>
+        </span>
+        <span
+            class="container border border-primary border-2 rounded-2 mx-4 bg-light border rounded-2 d-flex flex-column align-items-center">
+            <img class="recapImages pt-3" src="./images/scales.png">
+            <h1 class="text-dark" id="balanceRecapAmount">$0</h1>
+        </span>
+    </section>
+
+    <!-- ================================forms section ======================== -->
+    <!-- ============= income form ================ -->
+    <section class="container d-flex">
+        <form class="mt-5 col-4 bg-light mx-5 border border-primary 
+            border-2 rounded-2 d-flex flex-column align-items-center"
+            id="incomeForm">
+            <h5 class="text-center mt-5">Enter Income</h5>
+            <div class="mb-2">
+                <label for="incomeInput" class="form-label  "></label>
+                <input type="number" class="form-control border border-info" 
+                id="incomeInput" placeholder="Enter take home pay...">
+            </div>
+            <div class="btn btn-info justify-content-end mt-3 border border-primary" id="incomeSubmitBtn"
+                type="submit">Submit</div>
+        </form>
+        <!-- ============== expenses form =============== -->
+        <div class="container col-5 bg-light mt-5 border border-primary border-2 rounded-2">
+            <h5 class="text-center mt-3">Enter Expense Item</h5>
+            <form id="expenseForm" class="mb-2">
+                <label for="creditorInput" class="form-label">Creditor</label>
+                <input type="text" class="form-control border border-info" id="creditorInput" placeholder="Creditor Name...">
+                <label for="amtDueInput" class="form-label">Amount Due</label>
+                <input type="number" class="form-control border border-info" id="amtDueInput" placeholder="Amount Due...">
+                <label for="dueDateInput" class="form-label">Due Date</label>
+                <input type="date" class="form-control border border-info" id="dueDateInput">
+                <button type="button" class="btn btn-info mt-2 border border-primary"
+                    id="expenseSubmitBtn">Submit</button>
+            </form>
+        </div>
+    </section>
+    <!-- ====================================== expense list section ========================================= -->
+    <section class="container col-8 bg-light border border-primary border-2 rounded-2 mt-5">
+        <h2 class="display-5 text-center text-secondary">Expense List</h2>
+        <div class="container container-fluid">
+            <table id="expenseList" class="table table-sm table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col">Creditor</th>
+                        <th scope="col">$ Due</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                        <th scope="col">Paid</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody" class="">
+                    <tr scope="row">
+                        <td class="creditor"></td>
+                        <td class="amtDue"></td>
+                        <td class="dueDate"></td>
+                        <td class="status"></td>
+                    </tr>
+     <!-- ====================== new rows to be dynamically added below from form data =================== -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+
+<!-- ============================== income form modal ============================= -->
+
+    <div class="modal fade modal-dialog modal-dialog-centered" 
+        id="incomeModal" data-bs-backdrop="static" 
+        data-bs-keyboard="false" tabindex="-1" 
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Income</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <h6 class="text-center">Enter Your Take Home Pay Below</h6>
+            <form  class="mb-2">
+                <label for="incomeInput" class="form-label"></label>
+                <input type="number" class="form-control" 
+                id="incomeInput" placeholder="Enter take home pay...">
+            </form>
+            <div class="btn btn-warning justify-content-end" 
+            id="incomeSubmitBtn" type="submit">Submit</div>
+        </div>
+        <div class="modal-footer">
+            
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- ============================== Expenses Modal ======================================= -->
+
+  <div class="modal fade modal-dialog modal-dialog-centered" id="expenseModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Expense</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <h6 class="text-center">Enter Your Expense Item Below</h6>
+            <form id="expenseForm" class="mb-2">
+                <label for="creditorInput" class="form-label">Creditor</label>
+                <input type="text" class="form-control" id="creditorInput" placeholder="Creditor Name...">
+                <label for="amtDueInput" class="form-label">Amount Due</label>
+                <input type="number" class="form-control" id="amtDueInput" placeholder="Amount Due...">
+                <label for="dueDateInput" class="form-label">Due Date</label>
+                <input type="date" class="form-control" id="dueDateInput">            
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-warning" id="expenseSubmitBtn">Submit</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+-->
+
+    <!-- ========================== footer section ================================= -->
+
+    <footer class="mt-5 container container-fluid bg-primary d-flex justify-content-evenly align-items-center">
+        <div class="container py-1">
+            <p class="text-white-50"><small>&copy 2022 Cashable & ChristopherDeo.com</small></p>
+        </div>
+        <div class="container d-flex justify-content-evenly" id="social">
+            <a class="" href="https://github.com/Christopher-Deo/">
+                <img class="socialIcons" alt="github icon" src="./images/github-icon.png">
+            </a>
+            <a class="" href="https://www.linkedin.com/in/christopherdeo/">
+                <img class="socialIcons" alt="LinkedIn icon" src="./images/linkedin-icon.png">
+            </a>
+            <a class="" href="https://twitter.com/webdevdeo/">
+                <img class="socialIcons" alt="Twitter icon" src="./images/twitter-icon.png">
+            </a>
+            <a class="" href="https://www.facebook.com/christopher.deo.58/">
+                <img class="socialIcons" alt="Facebook icon" src="./images/FB-icon.png">
+            </a>
+        </div>
+        <div class="container col-4 align-items-center justify-content-center' id=" contact">
+            <div class="container d-inline">
+                <label class="h6 pt-2 text-white-50" for="emailInput" class="form-label">Get In Touch!</label>
+                <input class="form-control form-control-sm" type="email" id="emailInput"
+                    placeholder="Email@Example.com">
+            <div class="btn btn-info mt-1 mb-1 border border-primary" id="contactBtn"
+                type="submit">Send</div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <!-- =========================== Adding Font Awesome JS =============================== -->
+    <script src="./node_modules/@fortawesome/fontawesome-free/js/solid.js"></script>
+    <script src="./node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"></script>
+
+    <!-- =========================== instructions modal ==================================== -->
+
+    <div class="modal fade modal-dialog modal-dialog-centered" id="instructionModal" data-bs-backdrop="static"
+        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Instructions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ol class="pt-2 pb-2">
+                        <li>Click "income" to open the form to add your income</li>
+                        <li>Enter the amount of your monthly take home pay into the income box.</li>
+                        <li>Click on the submit button to load your income</li>
+                        <li>Click on the "Expenses" button to open the expense form</li>
+                        <li>Complete the expense form for each monthly expense</li>
+                        <li>Click on the submit button to add each expense to your budget</li>
+                        <li>To mark a bill as paid, click on the check box next to the item.</li>
+                        <li>To edit an entry, click on the edit icon next to the item you wish to edit</li>
+                        <li>To delete an entry, click on the trash can icon next to the item you wish to delete</li>
+                    </ol>
+                    <p>Your balance will auto-caluclate with each expense entry, edit, or deletion. </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-warning">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

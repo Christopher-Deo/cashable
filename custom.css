@@ -1,0 +1,20 @@
+.logo{
+    max-height: 150px;
+    max-width: 200px;
+    }
+
+.socialIcons{
+    max-height: 25px;
+}
+
+body{
+    background-image: url('./images/cash-background.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.recapImages{
+    max-height: 125px;
+}
+

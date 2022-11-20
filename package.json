@@ -1,0 +1,29 @@
+{
+  "name": "wk10-coding-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.2.0",
+    "axios": "^1.1.3",
+    "bootstrap": "^5.2.1",
+    "jquery": "^3.6.1"    
+  },
+  "devDependencies": {
+    "eslint": "^8.24.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Christopher-Deo/my-budget-tracker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Christopher-Deo/my-budget-tracker/issues"
+  },
+  "homepage": "https://github.com/Christopher-Deo/my-budget-tracker#readme"
+}
