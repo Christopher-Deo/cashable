@@ -9,10 +9,13 @@
     "amplify/backend/awscloudformation": true
   },
   "cSpell.words": [
+    "appbar",
     "awsconfig",
+    "haspopup",
     "jssdk",
     "noopener",
     "noreferrer",
+    "Remy",
     "webfonts",
     "xfbml"
   ]

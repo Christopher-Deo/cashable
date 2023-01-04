@@ -10,6 +10,11 @@
       "StackName": "amplify-cashable-staging-215753",
       "StackId": "arn:aws:cloudformation:us-west-2:548425607683:stack/amplify-cashable-staging-215753/ac666f60-8bb1-11ed-b5a4-067a97fb7e87",
       "AmplifyAppId": "dkj8ovr51sxfm"
+    },
+    "categories": {
+      "auth": {
+        "cashable676e90b9": {}
+      }
     }
   },
   "dev": {

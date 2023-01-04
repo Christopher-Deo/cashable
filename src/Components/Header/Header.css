@@ -1,0 +1,11 @@
+header{
+    background-color: #e6e6e6;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+#logo{
+    height: 15vmin;
+    pointer-events: none;
+}
