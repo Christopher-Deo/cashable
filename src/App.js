@@ -20,6 +20,7 @@ import IncomeForm from '././Components/IncomeForm/IncomeForm';
 import Footer from './Components/Footer/Footer';
 import FormContainer from './Components/FormContainer/FormContainer';
 import Recap from './Components/Recap/Recap';
+import ExpenseList from './Components/ExpenseList/ExpenseList';
 
 
 
@@ -29,6 +30,7 @@ function App() {
       <Header />
       <Recap />
       <FormContainer />
+      <ExpenseList />
       <Footer />
     </div>    
   );

@@ -1,0 +1,45 @@
+.expenseListContainer {
+    background-color: #e6e6e6;
+    border: 2px solid #6a2c70;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem 1rem;
+    text-align: center;
+    color: #471e4b;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #6a2c70;
+    margin: 0.5rem 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ae49b8;
+}
+
+.icons {
+    color: #ae49b8;
+    cursor: pointer;
+    padding: 0.25rem;
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: column;
+}
+
+.status {
+    display: flex;
+    justify-content: space-evenly;
+
+    align-items: center;
+}
