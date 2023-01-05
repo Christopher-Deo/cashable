@@ -1,0 +1,13 @@
+header{
+    background-color: #e6e6e6;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid #471e4b;
+    box-shadow: 0 2px 2px #471e4b;
+}
+
+#logo{
+    height: 15vmin;
+    pointer-events: none;
+}

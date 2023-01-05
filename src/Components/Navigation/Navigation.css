@@ -1,0 +1,18 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background-color: #e6e6e6;
+    width: 100%;
+    top: 5rem;
+  
+  /* z-index: 100;  */
+}
+
+.navItem{
+    /* margin: 0 10px; */
+    padding: 0.75rem;
+/* border-bottom: 3px solid transparent; */
+cursor: pointer;
+}

@@ -1,0 +1,48 @@
+.expenseFormContainer {
+    background-color: #e6e6e6;
+    border: 2px solid #6a2c70;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem 2rem;
+    width: 50%;
+    text-align: center;
+    color: #471e4b;
+}
+
+.expenseFormInputContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.expenseFormLabel {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ae49b8;
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ae49b8;
+    margin: 0.5rem 0;
+}
+
+#creditorInput, #amountDueInput, #dueDateInput {
+    /* width: 100%; */
+    height: 2rem;
+    border: 1px solid #6a2c70;
+        border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ae49b8;
+}
+
+h1{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #6a2c70;
+    margin: 0.5rem 0;
+}
