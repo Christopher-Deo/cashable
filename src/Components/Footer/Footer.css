@@ -1,11 +1,13 @@
 footer{
     width: 100%;
+    height: 50px;
     background-color: #000;
     color: #fff;
-    padding: 20px;
+    /* padding: 20px;
     text-align: center;
-    font-size: 12px;
+    font-size: 12px; */
 position: fixed;
     bottom: 0;
-    
+    border-top: 3px solid #471e4b;
+    box-shadow: 2px 2px 0 #471e4b;
 }

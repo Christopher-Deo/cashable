@@ -1,10 +1,11 @@
 import React from 'react'
+import BottomNav from '../../Components/BottomNav/BottomNav'
 import './Footer.css'
 
 const Footer = () => {
   return (
     <footer>
-      <h1>this is my footer area</h1>
+      <BottomNav />
     </footer>
   )
 }
