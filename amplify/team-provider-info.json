@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cashable-dev-192328-authRole",
+      "UnauthRoleArn": "arn:aws:iam::548425607683:role/amplify-cashable-dev-192328-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::548425607683:role/amplify-cashable-dev-192328-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-cashable-dev-192328-deployment",
+      "UnauthRoleName": "amplify-cashable-dev-192328-unauthRole",
+      "StackName": "amplify-cashable-dev-192328",
+      "StackId": "arn:aws:cloudformation:us-east-1:548425607683:stack/amplify-cashable-dev-192328/8e678920-914e-11ed-b895-121c8d736bc9",
+      "AmplifyAppId": "d3b80xq3nq9zng"
+    },
+    "categories": {
+      "auth": {
+        "cashabled9148be9": {}
+      }
+    }
+  }
+}

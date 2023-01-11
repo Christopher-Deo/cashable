@@ -19,11 +19,11 @@ export default function BottomNav() {
     const [value, setValue] = useState(0);
 
 
-    useEffect(() => {
-        console.log(value);
+    // useEffect(() => {
+    //     console.log(value);
 
-    }, [value,]
-    )
+    // }, [value,]
+    // )
 
     return (
         <Box sx={{
