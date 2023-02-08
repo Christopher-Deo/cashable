@@ -7,8 +7,8 @@ const IncomeForm = () => {
 
     const handleIncomeForm = () => {
         setIncomeForm(true);
-        
     }
+    
 
 
     return (

@@ -11,6 +11,7 @@
   "cSpell.words": [
     "appbar",
     "awsconfig",
+    "cashabled",
     "haspopup",
     "jssdk",
     "noopener",
@@ -18,5 +19,8 @@
     "Remy",
     "webfonts",
     "xfbml"
-  ]
+  ],
+  "Codegeex.DisabledFor": {
+    "javascript": true
+  }
 }

@@ -1,0 +1,10 @@
+{
+  "resourceName": "dynamobcc37c9b",
+  "tableName": "dynamobcc37c9b",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

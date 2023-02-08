@@ -1,6 +1,24 @@
 {
+  "api": {
+    "cashable": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            },
+            "authenticationType": "API_KEY"
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
   "auth": {
-    "cashabled9148be9": {
+    "cashable1ab72dbd": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -28,10 +46,9 @@
     }
   },
   "storage": {
-    "s3dd618002": {
-      "dependsOn": [],
+    "dynamobcc37c9b": {
       "providerPlugin": "awscloudformation",
-      "service": "S3"
+      "service": "DynamoDB"
     }
   }
 }

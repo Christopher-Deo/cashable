@@ -4,7 +4,7 @@ import logo from '../../logo.svg';
 // import Navigation from '../../Components/Navigation/Navigation'
 import MainMenu from '../../Components/Menu/Menu';
 import './Header.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 

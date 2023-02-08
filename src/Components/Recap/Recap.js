@@ -8,7 +8,7 @@ import './Recap.css'
 const Recap = () => {
   
   return (
-    <section className='recapArea col-10'>
+    <section className='recapArea col-10 container container-fluid'>
       <IncomeRecap />
       <ExpenseRecap />
       <BalanceRecap />
