@@ -1,4 +1,12 @@
-.formsArea{
-    display: flex;
-    justify-content: space-around;
+.formContainer{
+    display: flex; 
+    justify-content: space-around; 
+    width: 100%;      
+}
+   
+@media  screen and (max-width: 768px) {
+    .formContainer{
+      flex-direction: column;
+      width: 100vw;
+    }
     }

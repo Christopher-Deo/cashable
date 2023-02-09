@@ -1,30 +1,33 @@
-import { React, useState, useEffect } from 'react'
-import './IncomeForm.css'
+import { React, useState, useEffect } from 'react';
+//bootstrap imports
+// Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+// Bootstrap Bundle JS
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import './IncomeForm.css';
+
+
 
 const IncomeForm = () => {
-    const [income, setIncome] = useState(0);
-    const [incomeForm, setIncomeForm] = useState(false);
+    const [income, setIncome] = useState([]);
 
-    const handleIncomeForm = () => {
-        setIncomeForm(true);
-    }
-    
 
 
     return (
         <section className='incomeFormContainer'>
             <h1 className='mt-3'>Income Entry Form</h1>
-            <form className='incomeForm'>
-                <div className='incomeFormInputContainer'>
-                    <label className='incomeFormLabel' htmlFor='incomeFormLabel'>Income</label>
-                    <input className='incomeFormInput form-control' type='number' name='incomeFormInput' id='incomeFormInput' placeholder='Enter Your Income' />
-                    <button className='incomeSubmitBtn' type='submit'>Submit</button>
-                </div>
-
-            </form>
+            <Form className='incomeForm'>
+                <Form.Group className="mb-3" controlId="incomeInput">
+                    <Form.Label>Income</Form.Label>
+                    <Form.Control type="number" placeholder="Enter Income" />
+                </Form.Group>
+                <Button variant="primary" type="button">Add Income</Button>
+            </Form>
 
         </section>
-    )
-}
+    );
+};
 
-export default IncomeForm
+export default IncomeForm;

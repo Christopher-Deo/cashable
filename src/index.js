@@ -9,7 +9,12 @@ import {Amplify} from 'aws-amplify';
 import awsconfig from './aws-exports';
 // import '@aws-amplify/ui-react/styles.css';
 import { AmplifyProvider } from '@aws-amplify/ui-react';
-import 'bootstrap/dist/css/bootstrap.min.css'
+//Bootstrap imports
+// Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+// Bootstrap Bundle JS
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
 
 // Configure Amplify
 Amplify.configure(awsconfig);
